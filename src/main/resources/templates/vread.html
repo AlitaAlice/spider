@@ -1,0 +1,974 @@
+
+<!DOCTYPE html>
+<html lang="en" class="app">
+<head>
+    <title>VReadTech</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="referrer" content="no-referrer"/>
+    <meta name="referrer" content="never"/>
+    <meta name="referrer" content="same-origin"/>
+    <link rel="stylesheet" href="js/jPlayer/jplayer.flat.css" type="text/css" />
+    <link rel="stylesheet" href="css/bootstrap.css?v=a" type="text/css" />
+    <link rel="stylesheet" href="css/animate.css" type="text/css" />
+    <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css" />
+    <link rel="stylesheet" href="css/simple-line-icons.css" type="text/css" />
+    <link rel="stylesheet" href="css/font.css" type="text/css" />
+    <link rel="stylesheet" href="css/app.css?v=1592441141" type="text/css" />
+    <link rel="stylesheet" href="css/fakeLoader.min.css?v=x8" type="text/css">
+    <link rel="shortcut icon" href="image/favicon.ico" />
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/app.js?v=0"></script>
+    <script src="js/masonry.pkgd.min.js"></script>
+    <script src="js/jquery.lazyload.js"></script>
+    <script src="js/imagesloaded.pkgd.min.js"></script>
+    <script src="js/infinite-scroll.pkgd.min.js"></script>
+    <script src="js/fakeLoader.min.js"></script>
+    <script src="js/slimscroll/jquery.slimscroll.min.js"></script>
+    <script src="js/app.plugin.js"></script>
+    <script type="text/javascript" src="xjs/jPlayer/jquery.jplayer.min.js"></script>
+    <script type="text/javascript" src="xjs/jPlayer/add-on/jplayer.playlist.min.js"></script>
+    <script type="text/javascript" src="xjs/jPlayer/demo.js"></script>
+</head>
+<body>
+<section class="vbox">
+    <header class="bg-white-only header header-md navbar navbar-fixed-top-xs">
+        <div class="navbar-header aside-md bg-header xnav-xs">
+            <a class="btn btn-link visible-xs" data-toggle="class:nav-off-screen,open" data-target="#nav,html">
+                <i class="icon-list"></i>
+            </a>
+            <a href="/" class="navbar-brand text-lt"><img src="images/logo.png" alt="." class="hide" /> <span class="hidden-nav-xs m-l-sm lg-as">微读</span> </a>
+            <a class="btn btn-link visible-xs" data-toggle="dropdown" data-target=".user"> <i class="icon-settings"></i> </a>
+        </div>
+        <ul class="nav navbar-nav hidden-xs">
+            <li>
+                <a href="#nav,.navbar-header" data-toggle="class:nav-xs,nav-xs" class="text-muted active"> <i class="fa fa-indent text"></i> <i class="fa fa-dedent text-active"></i> </a>
+            </li>
+        </ul>
+
+        <div class="navbar-form navbar-left input-s-lg m-t m-l-n-xs hidden-xs" role="search">
+            <div class="form-group">
+                <div class="input-group">
+      <span class="input-group-btn">
+        <button  data-toggle="modal" id="idx" data-target="myModals" class="btn btn-sm bg-white btn-icon rounded"><i class="fa fa-search"></i></button>
+      </span>
+                    <input type="search" id="name" class="form-control no-border input-sm rounded search_input" placeholder="搜索公众号生成rss...">
+                </div>
+            </div>
+        </div>
+
+        <!--
+        <div class="navbar-left hidden-xs hidden-sm" id="">
+                  <ul class="nav navbar-nav m-n hidden-xs nav-user user">
+                      <li>
+                        <a href="/">首页<em>|</em></a>
+                      </li>
+                      <li style="display:none;">
+                        <a href="about_rss.php">Rss教程</a>
+                      </li>
+                      <li>
+                        <a class="pay_a" href="vip.php"><i class="icon-present"></i>开通会员<em>|</em></a>
+                      </li>
+                      <li style="display:none;">
+                        <a href="user/rss_index.php">关于我们</a>
+                      </li>
+                      <li class="af-li">
+                        <a href="#modal_f_contact" data-toggle="modal">联系我们<em>|</em></a>
+                      </li>
+                      <li class="af-li">
+                        <a href="#" data-toggle="modal" data-target="#myModalsub" class="sub_pnx" data-placement="right">提交公众号<p class="head-em">免费</p></a>
+                      </li>
+                   </ul>
+
+        </div>
+        -->
+
+        <div class="navbar-right ">
+            <ul class="nav navbar-nav m-n hidden-xs nav-user user">
+                <div class="navbar-left hidden-xs hidden-sm hidden-md" id="">
+                    <ul class="nav navbar-nav m-n hidden-xs nav-user user">
+                        <li>
+                            <a href="/">首页</a>
+                        </li>
+                        <li style="display:none;">
+                            <a href="about_rss.php">Rss教程</a>
+                        </li>
+                        <li>
+                            <a href="https://www.showapi.com/apiGateway/view?apiCode=1797" target="_blank">Api</a>
+                        </li>
+                        <li style="">
+                            <a class="pay_a" href="vip.php">加入会员</a>
+                        </li>
+                        <li style="display:none;">
+                            <a href="user/rss_index.php">关于我们</a>
+                        </li>
+                        <li style="" class="af-li">
+                            <a href="#modal_f_contact" data-toggle="modal">联系我们</a>
+                        </li>
+                        <li class="af-li">
+                            <a href="#" data-toggle="modal" data-target="#myModalsub" class="sub_pnx" data-placement="right">提交公众号<p class="head-em">免费</p></a>
+                        </li>
+                    </ul>
+
+                </div>
+
+                <div class="navbar-right ">
+                    <ul class="nav navbar-nav m-n hidden-xs nav-user user s-user">
+                        <li class="dropdown"> <a href="#" class="dropdown-toggle bg clear" data-toggle="dropdown"> <span class="thumb-sm avatar pull-right m-t-n-sm m-b-n-sm m-l-sm"> <img src="https://thirdwx.qlogo.cn/mmopen/NLbUFBy5nMCw25vYicZtxZvia8nwQZNQOfclPbmVuNtdUbnQ23yTWD8ibkCWJdmsT09Vdhh5ticqG4Ml3O5lJqxzzBO2tWRl0Wvx/132" alt="..." /></span>Alita<b class="caret"></b> </a>
+                            <ul class="dropdown-menu animated fadeInRight">
+                                <li><a href="/"><i class="icon-home"></i>首页</a></li>
+                                <li><a class="pay_a" href="vip.php"><i class="icon-present"></i>开通会员<i class="hot-icon"></i></a></li>
+                                <li class="af-li"><a href="#modal_f_contact" data-toggle="modal"><i class="icon-envelope"></i>联系我们</a></li>
+                                <li class="af-li"><a href="#" data-toggle="modal" data-target="#myModalsub" class="sub_pnx" data-placement="right"><i class="fa fa-pencil-square-o"></i>提交公众号<span class="badge bg-danger pull-right">免费</span></a></li>
+                                <li> <a href="info.php"><i class="icon-info"></i>我的信息</a> </li>
+                                <li> <a href="#" class="download-i"><i class="icon-arrow-down"></i>我的下载</a> </li>
+                                <li class="divider"></li>
+                                <li> <a href="/" class="lo-b" data-toggle="ajaxModal"><i class="icon-logout"></i>退出登录</a> </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+    </header>
+    <section class="vbox">
+        <section class="hbox stretch main-l">
+            <aside class="dk xnav-xs aside-md hidden-print" id="nav">
+                <section class="vbox">
+                    <section class="w-f-md scrollable">
+                        <div class="slim-scroll" data-height="auto" data-disable-fade-out="true" data-distance="0" data-size="10px" data-railOpacity="0.2">
+                            <nav class="nav-primary hidden-xs">
+                                <ul class="nav bg clearfix spul ful">
+                                    <li class="active"> <a href="#"> <i class="icon-grid"></i><b class="pull-right"></b><span class="font-bold d-font">头条资讯</span> </a> </li>
+                                    <li class=""> <a href="wx_rank.php"> <i class="icon-trophy"></i><b class="pull-right"><i class="fa fa-angle-right"></i></b><span class="font-bold d-font">微信榜单</span> </a> </li>
+                                    <li class=""> <a href="wx_comment_rank.php"> <i class="icon-speech"></i><b class="pull-right"><i class="fa fa-angle-right"></i></b><span class="font-bold d-font">热评榜单</span> </a> </li>
+                                    <li class=""> <a href="wx_discuss_rank.php"> <i class="icon-bar-chart"></i><b class="pull-right"><i class="fa fa-angle-right"></i></b><span class="font-bold d-font">热议榜单</span> </a> </li>
+                                </ul>
+
+                                <ul class="nav more-type spul" data-ride="collapse" style="display:none;">
+                                    <li class="">
+                                        <a href="#" class="auto">
+         <span class="pull-right text-muted">
+          <i class="fa fa-angle-right text"></i>
+          <i class="fa fa-angle-down text-active"></i>
+         </span>
+                                            <i class="icon-list"></i>
+                                            <span>更多分类</span>
+                                        </a>
+                                        <ul class="nav dk text-sm spul mtype">
+
+                                            <li class="li-type col-lg-4 col-md-4 col-sm-6 col-xs-6"><button type="button" class="btn btn-default" data-cn="0"><i class="icon-calendar"></i>最新</button></li>
+                                            <li class="li-type col-lg-4 col-md-4 col-sm-6 col-xs-6"><button type="button" class="btn btn-default" data-cn="1"><i class="icon-globe-alt"></i>新闻</button></li>
+                                            <li class="li-type col-lg-4 col-md-4 col-sm-6 col-xs-6"><button type="button" class="btn btn-default" data-cn="30"><i class="icon-social-dropbox"></i>民生</button></li>
+                                            <li class="li-type col-lg-4 col-md-4 col-sm-6 col-xs-6"><button type="button" class="btn btn-default" data-cn="2"><i class="icon-rocket"></i>科技</button></li>
+                                            <li class="li-type col-lg-4 col-md-4 col-sm-6 col-xs-6"><button type="button" class="btn btn-default" data-cn="3"><i class="icon-diamond"></i>财经</button></li>
+                                            <li class="li-type col-lg-4 col-md-4 col-sm-6 col-xs-6"><button type="button" class="btn btn-default" data-cn="4"><i class="icon iconfont icon-qiche"></i>汽车</button></li>
+                                            <li class="li-type col-lg-4 col-md-4 col-sm-6 col-xs-6"><button type="button" class="btn btn-default" data-cn="5"><i class="icon-social-youtube"></i>影音</button></li>
+                                            <li class="li-type col-lg-4 col-md-4 col-sm-6 col-xs-6"><button type="button" class="btn btn-default" data-cn="6"><i class="icon-book-open"></i>读书</button></li>
+                                            <li class="li-type col-lg-4 col-md-4 col-sm-6 col-xs-6"><button type="button" class="btn btn-default" data-cn="7"><i class="icon iconfont icon-qingganyingxiao"></i>情感</button></li>
+                                            <li class="li-type col-lg-4 col-md-4 col-sm-6 col-xs-6"><button type="button" class="btn btn-default" data-cn="8"><i class="icon-handbag"></i>时尚</button></li>
+
+
+                                            <li class="li-type col-lg-4 col-md-4 col-sm-6 col-xs-6"><button type="button" class="btn btn-default" data-cn="11"><i class="icon-emoticon-smile"></i>搞笑</button></li>
+
+                                            <li class="li-type col-lg-4 col-md-4 col-sm-6 col-xs-6"><button type="button" class="btn btn-default" data-cn="13"><i class="icon-ghost"></i>八卦</button></li>
+                                            <li class="li-type col-lg-4 col-md-4 col-sm-6 col-xs-6"><button type="button" class="btn btn-default" data-cn="14"><i class="icon-cup"></i>美食</button></li>
+                                            <li class="li-type col-lg-4 col-md-4 col-sm-6 col-xs-6"><button type="button" class="btn btn-default" data-cn="15"><i class="icon-heart"></i>健康</button></li>
+                                            <li class="li-type col-lg-4 col-md-4 col-sm-6 col-xs-6"><button type="button" class="btn btn-default" data-cn="16"><i class="icon-bulb"></i>育儿</button></li>
+                                            <li class="li-type col-lg-4 col-md-4 col-sm-6 col-xs-6"><button type="button" class="btn btn-default" data-cn="17"><i class="icon-directions"></i>旅行</button></li>
+
+                                            <li class="li-type col-lg-4 col-md-4 col-sm-6 col-xs-6"><button type="button" class="btn btn-default" data-cn="19"><i class="icon-game-controller"></i>游戏</button></li>
+
+                                            <li class="li-type col-lg-4 col-md-4 col-sm-6 col-xs-6"><button type="button" class="btn btn-default" data-cn="21"><i class="icon iconfont icon-junshi"></i>军事</button></li>
+                                            <li class="li-type col-lg-4 col-md-4 col-sm-6 col-xs-6"><button type="button" class="btn btn-default" data-cn="23"><i class="icon-bag"></i>职场</button></li>
+                                            <li class="li-type col-lg-4 col-md-4 col-sm-6 col-xs-6"><button type="button" class="btn btn-default" data-cn="24"><i class="icon-social-dribbble"></i>体育</button></li>
+                                            <li class="li-type col-lg-4 col-md-4 col-sm-6 col-xs-6"><button type="button" class="btn btn-default" data-cn="25"><i class="icon-symbol-male"></i>星座</button></li>
+                                            <li class="li-type col-lg-4 col-md-4 col-sm-6 col-xs-6"><button type="button" class="btn btn-default" data-cn="26"><i class="icon-magic-wand"></i>萌宠</button></li>
+
+                                            <li class="li-type col-lg-4 col-md-4 col-sm-6 col-xs-6"><button type="button" class="btn btn-default" data-cn="29"><i class="icon-graph"></i>理财</button></li>
+
+
+
+                                            <li class="li-type col-lg-4 col-md-4 col-sm-6 col-xs-6"><button type="button" class="btn btn-default" data-cn="33"><i class="icon-bubble"></i>评论</button></li>
+
+                                            <li class="li-type col-lg-4 col-md-4 col-sm-6 col-xs-6"><button type="button" class="btn btn-default" data-cn="37"><i class="icon iconfont icon-biancheng"></i>coder</button></li>
+                                            <li class="li-type col-lg-4 col-md-4 col-sm-6 col-xs-6"><button type="button" class="btn btn-default" data-cn="38"><i class="icon-vector"></i>科普</button></li>
+                                            <li class="li-type col-lg-4 col-md-4 col-sm-6 col-xs-6"><button type="button" class="btn btn-default" data-cn="39"><i class="icon iconfont icon-dianshangzatan"></i>杂谈</button> </li>
+                                            <li class="li-type col-lg-4 col-md-4 col-sm-6 col-xs-6"><button type="button" class="btn btn-default" data-cn="40"><i class="icon iconfont icon-lishi"></i>历史</button> </li>
+                                            <li class="li-type col-lg-4 col-md-4 col-sm-6 col-xs-6"><button type="button" class="btn btn-default" data-cn="41"><i class="icon-basket"></i>生活</button></li>
+                                            <li class="li-type col-lg-4 col-md-4 col-sm-6 col-xs-6"><button type="button" class="btn btn-default sign-b" data-cn="31"><i class="icon-notebook"></i>学习</button></li>
+                                            <li class="li-type col-lg-4 col-md-4 col-sm-6 col-xs-6"><button type="button" class="btn btn-default sign-b" data-cn="34"><i class="icon iconfont icon-meizhuang"></i>美妆</button></li>
+                                            <li class="li-type col-lg-4 col-md-4 col-sm-6 col-xs-6"><button type="button" class="btn btn-default sign-b" data-cn="35"><i class="icon iconfont icon-yishu"></i>艺术</button></li>
+
+                                            <li class="li-type col-lg-4 col-md-4 col-sm-6 col-xs-6"><button type="button" class="btn btn-default" data-cn="10"><i class="icon-support"></i>动漫</button></li>
+                                            <li class="li-type col-lg-4 col-md-4 col-sm-6 col-xs-6"><button type="button" class="btn btn-default" data-cn="12"><i class="icon-flag"></i>政务</button></li>
+                                            <li class="li-type col-lg-4 col-md-4 col-sm-6 col-xs-6"><button type="button" class="btn btn-default" data-cn="18"><i class="icon-puzzle"></i>教育</button></li>
+                                            <li class="li-type col-lg-4 col-md-4 col-sm-6 col-xs-6"><button type="button" class="btn btn-default sign-b" data-cn="36"><i class="icon iconfont icon-daxue"></i>大学</button></li>
+                                            <li class="li-type col-lg-4 col-md-4 col-sm-6 col-xs-6"><button type="button" class="btn btn-default sign-b" data-cn="44"><i class="icon iconfont icon-wangluo"></i>Web</button></li>
+                                            <li class="li-type col-lg-4 col-md-4 col-sm-6 col-xs-6"><button type="button" class="btn btn-default sign-b" data-cn="46"><i class="icon-user"></i>人物</button></li>
+
+                                            <li class="li-type col-lg-4 col-md-4 col-sm-6 col-xs-6"><button type="button" class="btn btn-default sign-b" data-cn="47"><i class="icon iconfont icon-4sdianbaoyang"></i>4s店</button></li>
+                                            <li class="li-type col-lg-4 col-md-4 col-sm-6 col-xs-6"><button type="button" class="btn btn-default sign-b" data-cn="48"><i class="icon iconfont icon-zongjiaoxinyangshouji-"></i>信仰</button></li>
+                                            <li class="li-type col-lg-4 col-md-4 col-sm-6 col-xs-6"><button type="button" class="btn btn-default sign-b" data-cn="32"><i class="icon iconfont icon-falv"></i>法律</button></li>
+                                            <li class="li-type col-lg-4 col-md-4 col-sm-6 col-xs-6"><button type="button" class="btn btn-default" data-cn="20"><i class="icon-home"></i>房产</button></li>
+                                            <li class="li-type col-lg-4 col-md-4 col-sm-6 col-xs-6"><button type="button" class="btn btn-default sign-b" data-cn="42"><i class="icon iconfont icon-ziyuan"></i>其他</button></li>
+                                            <li class="li-type col-lg-4 col-md-4 col-sm-6 col-xs-6"><button type="button" class="btn btn-default sign-b" data-cn="27"><i class="icon iconfont icon-qi"></i>企业</button></li>
+                                            <li class="li-type col-lg-4 col-md-4 col-sm-6 col-xs-6"><button type="button" class="btn btn-default sign-b" data-cn="43"><i class="icon iconfont icon-meirong"></i>美容</button></li>
+
+                                        </ul>
+                                    </li>
+                                </ul>
+
+                                <ul class="nav spul" data-ride="collapse">
+                                    <li>
+                                        <a href="#" class="auto xxx">
+         <span class="pull-right text-muted">
+         </span>
+                                            <i class="icon-star"></i>
+                                            <b class="pull-right"><i class="fa fa-angle-right"></i></b>
+                                            <span>我的关注</span>
+                                        </a>
+
+                                    </li>
+                                </ul>
+                                <ul class="nav spul" data-ride="collapse">
+                                    <li>
+                                        <a href="#" class="auto rss-xxx">
+         <span class="pull-right text-muted">
+         </span>
+                                            <i class="fa fa-rss"></i>
+                                            <b class="pull-right"><i class="fa fa-angle-right"></i></b>
+                                            <span>我的订阅</span>
+                                        </a>
+                                    </li>
+                                </ul>
+
+                                <ul class="nav spul" data-ride="collapse">
+                                    <li>
+                                        <a href="#" class="download-i auto">
+         <span class="pull-right text-muted">
+         </span>
+                                            <i class="icon-arrow-down"></i>
+                                            <b class="pull-right"><i class="fa fa-angle-right"></i></b>
+                                            <span>我的下载</span>
+                                        </a>
+                                    </li>
+                                </ul>
+
+                                <ul class="nav spul" data-ride="collapse">
+                                    <li>
+                                        <a href="my_rss_address.php" class="auto">
+         <span class="pull-right text-muted">
+         </span>
+                                            <i class="icon-direction"></i>
+                                            <b class="pull-right"><i class="fa fa-angle-right"></i></b>
+                                            <span>Rss地址</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                                <ul class="nav spul" data-ride="collapse">
+                                    <li>
+                                        <a href="focus_list.php" class="auto">
+         <span class="pull-right text-muted">
+         </span>
+                                            <i class="icon-list"></i>
+                                            <b class="pull-right"><i class="fa fa-angle-right"></i></b>
+                                            <span>关注列表</span>
+                                        </a>
+                                    </li>
+                                </ul>
+
+                                <ul class="nav spul icp-ul" data-ride="collapse">
+                                    <li class="panel-collapse collapse in">
+                                        <div class="ipc">
+                                            <p>所有数据均来源于网络，如有侵权请联系站长删除</p>
+                                            <p>© 2020 vreadtech.com 微读</p>
+                                            <p>电信与信息服务业务经营许可证</p>
+                                            <a href="http://www.miitbeian.gov.cn/" target="_blank">鲁ICP备17006484号-2</a>
+                                        </div>
+
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </section>
+
+                    <footer class="footer hidden-xs no-padder text-center-nav-xs">
+                        <div class="bg hidden-xs ">
+                            <div class="dropdown dropup wrapper-sm clearfix">
+
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+
+                      <span class="thumb-sm avatar pull-left m-l-xs">                        
+
+                        <img src="https://thirdwx.qlogo.cn/mmopen/NLbUFBy5nMCw25vYicZtxZvia8nwQZNQOfclPbmVuNtdUbnQ23yTWD8ibkCWJdmsT09Vdhh5ticqG4Ml3O5lJqxzzBO2tWRl0Wvx/132" class="dker" alt="...">
+
+                        <i class="on b-black"></i>
+
+                      </span>
+
+                                    <span class="hidden-nav-xs clear">
+
+                        <span class="block m-l">
+
+                          <strong class="font-normal text-lt u-name">Alita</strong> 
+
+                          <b class="caret"></b>
+
+                        </span>
+
+                        <span class="text-muted text-xs block m-l">我的信息</span>
+
+                      </span>
+
+                                </a>
+
+                                <ul class="dropdown-menu animated fadeInRight aside text-left">
+                                    <li><a href="/"><i class="icon-home"></i>首页</a></li>
+                                    <li><a class="pay_a" href="vip.php"><i class="icon-present"></i>开通会员<i class="hot-icon"></i></a></li>
+                                    <li class="af-li"><a href="#modal_f_contact" data-toggle="modal"><i class="icon-envelope"></i>联系我们</a></li>
+                                    <li class="af-li"><a href="#" data-toggle="modal" data-target="#myModalsub" class="sub_pnx" data-placement="right"><i class="fa fa-pencil-square-o"></i>提交公众号<span class="badge bg-danger pull-right">免费</span></a></li>
+                                    <li> <a href="info.php"><i class="icon-info"></i>我的信息</a> </li>
+                                    <li> <a href="#mydownload" data-toggle="modal"><i class="icon-arrow-down"></i>我的下载</a> </li>
+                                    <li class="divider"></li>
+                                    <li> <a href="/" class="lo-b" data-toggle="ajaxModal"><i class="icon-logout"></i>退出登录</a> </li>
+
+                                </ul>
+
+                            </div>
+
+                        </div>            </footer>
+
+                </section>
+            </aside>
+
+            <section id="content">
+                <section class="hbox stretch">
+                    <section>
+                        <section class="vbox">
+                            <section class="scrollable padder-lg w-f-md" id="bjax-target2">
+                                <section class="hbox stretch">
+                                    <aside class="aside-lg bg-light lter b-r">
+                                        <section class="vbox">
+                                            <section class="scrollable">
+                                                <div class="wrapper">
+                                                    <div class="text-center m-b m-t">
+                                                        <a href="#" class="thumb-lg"> <img src="http://wx.qlogo.cn/mmhead/Q3auHgzwzM4MvOm7CBFRTpZkBic7fHzrJyf039VsNo1DH7nmKOMCjQA/132" class="img-circle" /> </a>
+                                                        <div>
+                                                            <div class="h3 m-t-xs m-b-xs">
+                                                                武志红        </div>
+                                                            <small class="text-muted"><i class="fa fa-map-marker"></i> 广州万物有翼文化传媒有限公司</small>
+                                                        </div>
+                                                    </div>
+                                                    <div class="panel wrapper">
+                                                        <div class="row text-center">
+                                                            <div class="col-xs-6">
+                                                                <a href="#"> <span class="m-b-xs h4 block">4466</span> <small class="text-muted">文章数</small> </a>
+                                                            </div>
+                                                            <div class="col-xs-6">
+                                                                <a href="#"> <span class="m-b-xs h4 block">wzhxlx</span> <small class="text-muted">微信ID</small> </a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="btn-group btn-group-justified m-b">
+                                                        <a class="btn btn-success btn-rounded p_func bt_focus"  data-toggle="button" data-name="wzhxlx" data-cn="武志红" data-ct="1"> <span class="text"> <i class="icon-star"></i> 关注 </span> <span class="text-active"> <i class="icon-star"></i> 关注 </span> </a>
+                                                        <a class="btn btn-dark btn-rounded p_funcs btn_rss" data-kid="3568298336" data-name="wzhxlx" data-cn="武志红" data-ct="1"> <i class="fa fa-rss"></i> 订阅 </a>
+                                                    </div>
+                                                    <div class="progress-d">
+                                                        <small class="text-uc text-xs text-muted">功能介绍：</small>
+                                                        <p>wzhxlx资深心理咨询师，得到热门专栏《拥有一个你说了算的人生》作者，著有畅销书《为何家会伤人》、《为何爱会伤人》等，微博：@武志红。现于北上广深杭厦门成都苏州南京青岛10个城市开办了武志红心理咨询中心</p>
+                                                        <div class="line"></div>
+                                                        <small class="text-uc text-xs text-muted">导出文章</small>
+                                                        <p class="m-t-sm"> <a href="#" data-cn="wzhxlx" data-path="0" data-type="0" data-m="nrc" class="btn btn-s-md btn-danger download-a"><i class="icon-arrow-down"></i>&nbsp;一键导出所有文章</a></p>
+                                                    </div>
+                                                </div>
+                                            </section>
+                                        </section>
+                                    </aside>
+
+                                    <aside class="bg-white">
+                                        <section class="vbox">
+                                            <header class="header bg-light lt">
+
+                                                <section class="nav-sec account-nav">
+                                                    <section>
+                                                        <div class="row">
+
+                                                            <div class="col-lg-12">
+                                                                <ul class="breadcrumb bg-light lt">
+     <span class="musicbar animate inline m-l-sm" style="width:20px;height:20px">
+      <span class="bar1 a1 bg-primary lter"></span>
+      <span class="bar2 a2 bg-info lt"></span>
+      <span class="bar3 a3 bg-success"></span>
+      <span class="bar4 a4 bg-warning dk"></span>
+      <span class="bar5 a5 bg-danger dker"></span>
+     </span>
+                                                                    <li><a href="/"><i class="fa fa-home"></i> 首页</a></li>
+                                                                    <li><a href="#">武志红</a></li>
+                                                                </ul>
+
+                                                            </div>
+                                                        </div>
+                                                    </section>
+                                                </section>
+
+                                                <ul class="nav nav-tabs nav-white" style="display:none;">
+                                                    <li class="active"><a href="#activity" data-toggle="tab">Activity</a></li>
+                                                    <li class=""><a href="#events" data-toggle="tab">Events</a></li>
+                                                    <li class=""><a href="#interaction" data-toggle="tab">Interaction</a></li>
+                                                </ul>
+                                            </header>
+                                            <section class="scrollable">
+                                                <div class="tab-content">
+                                                    <div class="tab-pane active" id="activity">
+                                                        <ul class="list-group no-radius m-b-none m-t-n-xxs list-group-lg no-border">
+                                                            <li class="list-group-item">
+                                                                <a target="_blank" href="https://mp.weixin.qq.com/s?__biz=MzU2ODI5ODMzNg==&mid=2247528053&idx=1&sn=f4b43ad032dcd015b1dec55721674080&chksm=fc92307acbe5b96c6244875ef4407718de2cfce76eee4c7e4c63987da59644b51131e1d56089#rd"  class="thumb-sm pull-left m-r-sm img-a" style="background:url(http://img02.store.sogou.com/net/a/05/link?appid=100520091&url=http://mmbiz.qpic.cn/mmbiz_jpg/IZKicxnz4NVibJuS3yWzoEqjasLlfqA5qLDCskicOzkxbnoiaXE6njjcAkG3iaqzMdbm16tDcTicdfQICHypuYXdcdDQ/0?wx_fmt=jpeg)">
+                                                                </a>
+                                                                <a href="https://mp.weixin.qq.com/s?__biz=MzU2ODI5ODMzNg==&mid=2247528053&idx=1&sn=f4b43ad032dcd015b1dec55721674080&chksm=fc92307acbe5b96c6244875ef4407718de2cfce76eee4c7e4c63987da59644b51131e1d56089#rd"  class="clear tit-a link_valid" target="_blank">
+                                                                    <small class="pull-right">2020年6月17日</small>
+                                                                    <strong class="block">一个“坏妈妈”从自虐到舒服，她只做对了一件事</strong>
+                                                                    <small class="s-sou">为什么我们不能好好爱自己？</small>
+                                                                </a>
+                                                            </li>
+                                                            <li class="list-group-item">
+                                                                <a target="_blank" href="https://mp.weixin.qq.com/s?__biz=MzU2ODI5ODMzNg==&mid=2247528053&idx=2&sn=5c82ae324d5e6630d86cd43002512379&chksm=fc92307acbe5b96cd947c5777cba879ec677ada886df95a9d7d61e1285fabb753bc374a3d0dc#rd"  class="thumb-sm pull-left m-r-sm img-a" style="background:url(http://img02.store.sogou.com/net/a/05/link?appid=100520091&url=http://mmbiz.qpic.cn/mmbiz_jpg/IZKicxnz4NV8ibTBvS7oOO0UhTyKTknKc5jgZvvGC6a8BH6vxBE032p06w4HRhnVa85W61fB7oHSInqPfjCs7Rwg/0?wx_fmt=jpeg)">
+                                                                </a>
+                                                                <a href="https://mp.weixin.qq.com/s?__biz=MzU2ODI5ODMzNg==&mid=2247528053&idx=2&sn=5c82ae324d5e6630d86cd43002512379&chksm=fc92307acbe5b96cd947c5777cba879ec677ada886df95a9d7d61e1285fabb753bc374a3d0dc#rd"  class="clear tit-a link_valid" target="_blank">
+                                                                    <small class="pull-right">2020年6月17日</small>
+                                                                    <strong class="block">这是我今年见过最燃的短片：孤独的人，原来可以这样做</strong>
+                                                                    <small class="s-sou">短的是时光，长的是坚守。</small>
+                                                                </a>
+                                                            </li>
+                                                            <li class="list-group-item">
+                                                                <a target="_blank" href="https://mp.weixin.qq.com/s?__biz=MzU2ODI5ODMzNg==&mid=2247528053&idx=3&sn=f0cf6e6859acbabf4827f57b9750a4c4&chksm=fc92307acbe5b96c533879c72ad2f3d2f0dab63ff968acefe68a039afb5acd8da26ff477b5b1#rd"  class="thumb-sm pull-left m-r-sm img-a" style="background:url(http://img02.store.sogou.com/net/a/05/link?appid=100520091&url=http://mmbiz.qpic.cn/mmbiz_jpg/IZKicxnz4NVibJuS3yWzoEqjasLlfqA5qLFyF8YNRUfEfp2cen8tuiaPwBaNndVHSIAWtUgSOLQaQn4y73jpaKJmg/0?wx_fmt=jpeg)">
+                                                                </a>
+                                                                <a href="https://mp.weixin.qq.com/s?__biz=MzU2ODI5ODMzNg==&mid=2247528053&idx=3&sn=f0cf6e6859acbabf4827f57b9750a4c4&chksm=fc92307acbe5b96c533879c72ad2f3d2f0dab63ff968acefe68a039afb5acd8da26ff477b5b1#rd"  class="clear tit-a link_valid" target="_blank">
+                                                                    <small class="pull-right">2020年6月17日</small>
+                                                                    <strong class="block">中年男人迷惑行为里，年轻人最搞不懂它</strong>
+                                                                    <small class="s-sou">这有什么好玩的？</small>
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                        <div class="text-center">
+                                                            <ul class="pagination pagination">
+                                                                <li class="previous"><a href="account_wzhxlx">&larr;最新</a></li>
+                                                                <li><a href="account_wzhxlx&page=0"><i class="fa fa-chevron-left"></i></a></li>
+                                                                <li><a href="account_wzhxlx&page=2">2</a></li>
+                                                                <li><a href="account_wzhxlx&page=3">3</a></li>
+                                                                <li><a href="account_wzhxlx&page=4">4</a></li>
+                                                                <li><a href="account_wzhxlx&page=5">5</a></li>
+                                                                <li class="disabled"><a>...</a></li>
+
+                                                                <li><a href="account_wzhxlx&page=2"><i class="fa fa-chevron-right"></i></a></li>
+                                                                <li class="next"><a href="account_wzhxlx&page=249">最旧&rarr;</a></li>
+
+                                                            </ul>
+                                                            <div class="redir-li pagination pagination">
+                                                                <input type="text" class="page-val" data-cn=wzhxlx placeholder="249">
+                                                                <button class="btn btn-default tr-bt" type="button">跳转</button>
+                                                            </div>
+                                                            </nav>
+                                                        </div>
+                                                    </div>
+                                            </section>
+                                        </section>
+                                    </aside>
+
+
+                                    <aside class="col-lg-3 b-l" style="display:none;">
+                                        <section class="vbox">
+                                            <section class="scrollable padder-v">
+                                                <div class="panel">
+                                                    <h4 class="font-thin padder">Latest Tweets</h4>
+                                                    <ul class="list-group">
+                                                        <li class="list-group-item">
+                                                            <p>Wellcome <a href="#" class="text-info">@Drew Wllon</a> and play this web application template, have fun1 </p>
+                                                            <small class="block text-muted"><i class="fa fa-clock-o"></i> 2 minuts ago</small>
+                                                        </li>
+                                                        <li class="list-group-item">
+                                                            <p>Wellcome <a href="#" class="text-info">@Drew Wllon</a> and play this web application template, have fun1 </p>
+                                                            <small class="block text-muted"><i class="fa fa-clock-o"></i> 2 minuts ago</small>
+                                                        </li>
+                                                        <li class="list-group-item">
+                                                            <p>Wellcome <a href="#" class="text-info">@Drew Wllon</a> and play this web application template, have fun1 </p>
+                                                            <small class="block text-muted"><i class="fa fa-clock-o"></i> 2 minuts ago</small>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </section>
+                                        </section>
+                                    </aside>
+
+                                </section>
+                            </section>
+                        </section>
+                    </section>
+                </section>
+            </section>
+        </section>
+        <div class="modal fade" id="myModal_contact" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close b_clo" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h5 class="modal-title text-center" id="myModalLabel">
+                            <i class="icon-star"></i>
+                            <span>我的关注</span>
+                        </h5>
+                    </div>
+                    <div class="modal-body">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="myModal_rss" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close b_clo" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h5 class="modal-title text-center" id="myModalLabel">
+                            <i class="icon-star"></i>
+                            <span>我的订阅</span>
+                        </h5>
+                    </div>
+                    <div class="modal-body">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="modal-form">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-body wrapper-lg">
+                        <div class="row">
+                            <div class="col-sm-6 b-r">
+                                <h4 class="">会员到期</h4>
+                                <p>您的会员已到期，如需关注，订阅，查看所有历史文章及完整<a class="text-info" href="wx_rank.php">榜单</a>，请先<a class="text-info" href="vip.php">续费</a>，会员优先收录提交的账号，可订阅，关注更多账号!</p>
+                                <p>非会员用户可免费试用7天，仅可查看公众号前两页文章</p>
+                                <div class="cnm-form">
+                                    <div class="checkbox m-t-lg">
+                                        <div class="col-sm-6 b-r">
+                                            <a href="vip.php" class="btn btn-sm btn-primary pull-right text-uc m-t-n-xs"><strong>续费升级</strong></a>
+                                        </div>
+                                        <div class="col-sm-6 b-r">
+                                            <a href="vip.php" class="btn btn-sm btn-success pull-right text-uc m-t-n-xs"><strong>现在加入</strong></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <h4>联系方式</h4>
+
+                                <div class="attentionus-d">
+                                    <ul class="items clearfix">
+                <span class="social-widget-link social-link-weibo">
+                 <span class="social-widget-link-count"><i class="icon iconfont icon-qq1"></i><font>617512435</font></span>
+                 <span class="social-widget-link-title">客服QQ</span>
+                 <a href="/" target="_blank" rel="nofollow"></a>
+                </span>
+                                        <span class="social-widget-link social-link-wechat">
+                 <span class="social-widget-link-count"><i class="icon iconfont icon-weixin2"></i><font>kan999040</font></span>
+                 <span class="social-widget-link-title">客服微信</span>
+                 <a id="tooltip-s-weixin"></a>
+                </span>
+                                        <span class="social-widget-link social-link-qq">
+                 <span class="social-widget-link-count"><i class="icon iconfont icon-qun2"></i><font>QQ群(681644079)</font></span>
+                 <span class="social-widget-link-title">问题反馈</span>
+                 <a href="/"></a>
+                </span>
+                                        <span class="social-widget-link social-link-email">
+                 <span class="social-widget-link-count"><i class="icon iconfont icon-185078emailmailstreamline"></i><font>617512435@qq.com</font></span>
+                 <span class="social-widget-link-title">联系邮箱</span>
+                 <a href="/" target="_blank" rel="nofollow"></a>
+                </span>
+                                    </ul>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.modal-content -->
+            </div>
+            <!-- /.modal-dialog -->
+        </div>
+        <div class="modal fade" id="modal_f_contact">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-body wrapper-lg">
+                        <div class="row">
+                            <div class="col-sm-6 b-r">
+                                <h4 class="">现在加入会员</h4>
+                                <p>免费用户仅支持查看前两页文章链接，可查看<a href="wx_rank.php" class="text-info">榜单</a>前100条信息，如需查看更多，请<a class="text-info" href="vip.php">加入会员</a></p>
+                                <p>会员用户可查看<a href="wx_rank.php" class="text-info">榜单</a>前1000条信息，可查看公众号所有历史文章链接</p>
+                                <div class="cnm-form">
+                                    <div class="checkbox m-t-lg">
+                                        <div class="col-sm-6 b-r">
+                                            <a href="vip.php" class="btn btn-sm btn-primary pull-right text-uc m-t-n-xs"><strong>续费升级</strong></a>
+                                        </div>
+                                        <div class="col-sm-6 b-r">
+                                            <a href="vip.php" class="btn btn-sm btn-success pull-right text-uc m-t-n-xs"><strong>现在加入</strong></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <h4>联系方式</h4>
+
+                                <div class="attentionus-d">
+                                    <ul class="items clearfix">
+                <span class="social-widget-link social-link-weibo">
+                 <span class="social-widget-link-count"><i class="icon iconfont icon-qq1"></i><font>617512435</font></span>
+                 <span class="social-widget-link-title">客服QQ</span>
+                 <a href="/" target="_blank" rel="nofollow"></a>
+                </span>
+                                        <span class="social-widget-link social-link-wechat">
+                 <span class="social-widget-link-count"><i class="icon iconfont icon-weixin2"></i><font>kan999040</font></span>
+                 <span class="social-widget-link-title">客服微信</span>
+                 <a id="tooltip-s-weixin"></a>
+                </span>
+                                        <span class="social-widget-link social-link-qq">
+                 <span class="social-widget-link-count"><i class="icon iconfont icon-qun2"></i><font>QQ群(681644079)</font></span>
+                 <span class="social-widget-link-title">问题反馈</span>
+                 <a href="/"></a>
+                </span>
+                                        <span class="social-widget-link social-link-email">
+                 <span class="social-widget-link-count"><i class="icon iconfont icon-185078emailmailstreamline"></i><font>617512435@qq.com</font></span>
+                 <span class="social-widget-link-title">联系邮箱</span>
+                 <a href="/" target="_blank" rel="nofollow"></a>
+                </span>
+                                    </ul>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.modal-content -->
+            </div>
+            <!-- /.modal-dialog -->
+        </div>
+        <div class="modal fade" id="myModals" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content search_modal">
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">关闭
+                        </button>
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal -->
+        </div>
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close b_clo" data-dismiss="modal" aria-hidden="true">
+                            &times;
+                        </button>
+                        <h4 class="modal-title text-center" id="myModalLabel">
+                            微信扫码关注公众号直接登录,有效期剩余60秒
+                        </h4>
+                    </div>
+                    <div class="modal-body">
+                        <img class="img-responsive qr_image">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default b_clo" data-dismiss="modal">关闭
+                        </button>
+                        <!--<button type="button" class="btn btn-primary">
+                            提交更改
+                        </button>-->
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal -->
+        </div>
+        <div class="modal fade" id="myModalsub" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content" style="z-index:99;">
+
+
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                            &times;
+                        </button>
+                        <h4 class="modal-title" id="myModalLabel">
+                            提交公众号
+                        </h4>
+                    </div>
+                    <div class="modal-body">
+                        <form class="form-horizontal" role="form">
+                            <div class="form-group">
+                                <div class="col-sm-12" style="display:none;">
+                                    <input name="biz" value="biz" class="form-control biz" type="text"  placeholder="公众号biz:如(MjM5MjAxNDM4MA==)...">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-12">
+                                    <input name="wid" class="form-control wid" type="text" placeholder="公众号对应的微信号:如(rmrbwx)...">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-12">
+                                    <input name="wname" class="form-control wname" type="text" placeholder="公众号名称:如(人民日报)...">
+                                </div>
+                            </div>
+
+                        </form>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">关闭
+                        </button>
+                        <button type="button" class="btn btn-primary sub-u">
+                            提交
+                        </button>
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal -->
+        </div>
+        <div class="modal fade" id="modal_success" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content" style="z-index:99;">
+
+
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                            &times;
+                        </button>
+                        <h4 class="modal-title" id="myModalLabel">
+                            提交成功
+                        </h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="alert alert-success"><strong>提交成功</strong>，提交次天10:00统一收录处理，如急需处理，请<a href="#modal-account-limit" data-toggle="modal">联系客服</a>处理</div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">关闭
+                        </button>
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal -->
+        </div>
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close b_clo" data-dismiss="modal" aria-hidden="true">
+                            &times;
+                        </button>
+                        <h4 class="modal-title text-center" id="myModalLabel">
+                            微信扫码关注公众号直接登录,有效期剩余60秒
+                        </h4>
+                    </div>
+                    <div class="modal-body">
+                        <img class="img-responsive qr_image">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default b_clo" data-dismiss="modal">关闭
+                        </button>
+                        <!--<button type="button" class="btn btn-primary">
+                            提交更改
+                        </button>-->
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal -->
+        </div>
+        <div class="modal fade" id="myModal_limit" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                            &times;
+                        </button>
+                        <h4 class="modal-title" id="myModalLabel">
+                            <div class="alert alert-warning alert-block">
+                                <strong>您的关注数量达到上限。
+                            </div>
+                        </h4>
+                    </div>
+                    <div class="modal-body" style="text-align:center;">
+                        <p>您的关注，订阅已达到上限，如需关注，订阅更多公众号，请先<a class="text-info" href="vip.php">升级会员</a>等级</p>
+                        <p>非会员用户可免费试用7天，仅可查看公众号前两页文章</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">关闭
+                        </button>
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal -->
+        </div>
+        <div class="modal fade" id="modal-notlogin">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-body wrapper-lg">
+                        <div class="row">
+                            <div class="col-sm-6 b-r">
+                                <h4 class="">未登录</h4>
+                                <p>您当前没有<a class="text-info lgi" href="#myModal" data-target="#myModal" data-toggle="modal">登录</a>，如需查看原文链接，请先<a class="text-info lgi" href="#myModal" data-toggle="modal" data-target="#myModal">登录</a>，<a class="text-info lgi" href="#myModal" data-target="#myModal" data-toggle="modal">点击登录</a>后可查看更多榜单内容!</p>
+                                <p>非会员用户可免费试用7天，仅可查看公众号前两页文章</p>
+                                <div class="cnm-form">
+                                    <div class="checkbox m-t-lg">
+                                        <div class="col-sm-6 b-r">
+                                            <a href="vip.php" class="btn btn-sm btn-primary pull-right text-uc m-t-n-xs"><strong>续费升级</strong></a>
+                                        </div>
+                                        <div class="col-sm-6 b-r">
+                                            <a href="vip.php" class="btn btn-sm btn-success pull-right text-uc m-t-n-xs"><strong>现在加入</strong></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <h4>联系方式</h4>
+
+                                <div class="attentionus-d">
+                                    <ul class="items clearfix">
+                <span class="social-widget-link social-link-weibo">
+                 <span class="social-widget-link-count"><i class="icon iconfont icon-qq1"></i><font>617512435</font></span>
+                 <span class="social-widget-link-title">客服QQ</span>
+                 <a href="/" target="_blank" rel="nofollow"></a>
+                </span>
+                                        <span class="social-widget-link social-link-wechat">
+                 <span class="social-widget-link-count"><i class="icon iconfont icon-weixin2"></i><font>kan999040</font></span>
+                 <span class="social-widget-link-title">客服微信</span>
+                 <a id="tooltip-s-weixin"></a>
+                </span>
+                                        <span class="social-widget-link social-link-qq">
+                 <span class="social-widget-link-count"><i class="icon iconfont icon-qun2"></i><font>QQ群(681644079)</font></span>
+                 <span class="social-widget-link-title">问题反馈</span>
+                 <a href="/"></a>
+                </span>
+                                        <span class="social-widget-link social-link-email">
+                 <span class="social-widget-link-count"><i class="icon iconfont icon-185078emailmailstreamline"></i><font>617512435@qq.com</font></span>
+                 <span class="social-widget-link-title">联系邮箱</span>
+                 <a href="/" target="_blank" rel="nofollow"></a>
+                </span>
+                                    </ul>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.modal-content -->
+            </div>
+            <!-- /.modal-dialog -->
+        </div>
+        <div class="modal fade" id="modal_progress" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content" style="z-index:99;">
+
+
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                            &times;
+                        </button>
+                        <h4 class="modal-title" id="myModalLabel">
+                            提交成功
+                        </h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="alert alert-success"><strong>提交成功</strong>，提交次天10:00统一收录处理，如急需处理，请<a href="#modal-account-limit" data-toggle="modal">联系客服</a>处理</div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">关闭
+                        </button>
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal -->
+        </div>
+        <div class="modal fade" id="mydownload" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content" style="z-index:99;">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title" id="myModalLabel">我的下载</h4>
+                    </div>
+                    <div class="modal-body">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal -->
+        </div>
+        <div class="modal fade" id="modal_download_pay">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-body wrapper-lg">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <h4 class="">文章导出次数充值</h4>
+                                <p>免费用户仅支持查看前两页文章链接，可查看<a href="wx_rank.php" class="text-info">榜单</a>前100条信息，如需查看更多，请<a class="text-info" href="vip.php">加入会员</a></p>
+                                <p>会员用户可查看<a href="wx_rank.php" class="text-info">榜单</a>前1000条信息，可查看公众号所有历史文章链接</p>
+                                <p>单次文章列表导出费用￥5/次，现在加入会员，可享受免费下载次数优惠</p>
+                                <div class="cnm-form">
+                                    <div class="checkbox m-t-lg">
+                                        <div class="pay_qrWrap">
+                                            <div class="col-sm-6">
+                                                <div class="pay_qrImgWrap">
+                                                    <a class="pay_go2login">请点击刷新</a>
+                                                    <img src="image/web.png" class="pay_qrImg">
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <div class="pay_imgRight">
+                                                    <div class="pay_price">
+                                                        ￥5<span class="pay_des">使用微信扫码支付</span>
+                                                    </div>
+                                                    <div class="pay_logo">
+                                                        <span class="logo_weChat"></span>
+                                                    </div>
+                                                    <div data-v-4c8b664d="" class="pat_reloadNoVip">
+                                                        <a data-v-4c8b664d="">扫码支付完成后，请点击<span data-v-4c8b664d="">刷新</span></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.modal-content -->
+            </div>
+            <!-- /.modal-dialog -->
+        </div>
+        <div class="modal fade" id="modal_recover">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-body wrapper-lg">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <h4 class=""></h4>
+                                <p></p>
+                                <div class="cnm-form">
+                                    <div class="checkbox m-t-lg">
+                                        <div class="pay_qrWrap">
+                                            <div class="col-sm-6">
+                                                <div class="pay_qrImgWrap">
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <div class="pay_imgRight">
+                                                    <div class="pay_logo">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.modal-content -->
+            </div>
+            <!-- /.modal-dialog -->
+        </div>
+    </section>
+</section>
+<script src="js/ui.js?v=1592441141"></script>
+</body>
+</html>
